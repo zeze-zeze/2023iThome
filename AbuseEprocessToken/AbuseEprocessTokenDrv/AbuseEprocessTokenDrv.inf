@@ -1,0 +1,29 @@
+;
+; AbuseEprocessTokenDrv.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=2023iThome
+DriverVer=
+CatalogFile=AbuseEprocessTokenDrv.cat
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+
+[Standard.NT$ARCH$]
+
+
+[Strings]
+ManufacturerName="2023iThome" ;TODO: Replace with your manufacturer name
+ClassName=""
+DiskName="AbuseEprocessTokenDrv Source Disk"
