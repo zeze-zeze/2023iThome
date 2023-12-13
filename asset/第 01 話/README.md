@@ -9,7 +9,7 @@
 
 ![](Ring.png)
 
-其實在 Ring0 之下還有 VM 層的 Ring -1 與最近比較新的研究提出在 Processor 層的 Ring -2，不過這個系列的文章還是會專注說明 Ring3 與 Ring0 的部分。
+其實在 Ring0 之下還有 VM 層的 Ring -1 與最近比較新的研究提出在硬體層的 Ring -2，不過這個系列的文章還是會專注說明 Ring3 與 Ring0 的部分。
 
 
 ## Kernel 安全影響
