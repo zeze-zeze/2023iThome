@@ -82,7 +82,7 @@ PROCESS ffff958c0bb92080
 
 接下來的實作步驟如下。
 1. 從 CR3 取得 PML4 的 PA
-2. 用 37～48 bits 和 PML4 找到 PDPT
+2. 用 39～48 bits 和 PML4 找到 PDPT
 3. 用 30～38 bits 和 PDPT 找到 PD
 4. 用 21～29 bits 和 PD 找到 PT
 5. 用 12～20 bits 和 PT 找到 Page
@@ -95,7 +95,7 @@ kd> r CR3
 cr3=00000000001ab000
 ```
 
-### 2. 用 37～48 bits 和 PML4 找到 PDPT
+### 2. 用 39～48 bits 和 PML4 找到 PDPT
 用 `!dq` 讀取 PML4 的記憶體內容，[!dq](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/-db---dc---dd---dp---dq---du---dw) 是用來讀 PA 的，而之前使用的 dq 則是讀 VA。我們可以在第 `299 + 1` 個 PML4E 找到 PDPT 的資訊。`0a000000011d1863` 中的 `11d1` 是 PageFrameNumber，乘上 1 個 Page 的大小就是 PDPT 的 PA `0x11d1000`。
 
 ```
